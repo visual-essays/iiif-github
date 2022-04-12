@@ -20,6 +20,8 @@ For example, the manifest URL for the image file [images/Italy_2022/Positano-CC0
 
 A similar URL can be used to view the image in a simple IIIF viewer.  The viewer URL is the same as the manifest URL after the removal of the trailing `/manifest.json` path segment.  For instance, using the example from above the image can be viewed at the URL [https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Italy_2022/Positano-CC0.jpg](https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Italy_2022/Positano-CC0.jpg)
 
+Note that the image viewer includes a small info icon near the top right of the image.  Clicking this icon will display a small popup with a condensed version of key manifest information, in particular a definition of the image reuse rights and required attribution statements.
+
 # Options for image and/or metadata hosting
 
 ## Image only
@@ -45,8 +47,10 @@ requiredStatement:
 depicts: Q80948
 ```
 
-In this example the [generated IIIF manifest](https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Italy_2022/Fiordo_di_Furore.jpg) includes a label extracted from the image file name and the properties defined in both the 
+In this example the [generated IIIF manifest](https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Italy_2022/Fiordo_di_Furore.jpg/manifest.json) includes a label extracted from the image file name and the properties defined in both the 
 [images/Italy_2022/iiif-props.yaml](images/Italy_2022/iiif-props.yaml) and [images/Italy_2022/iiif-props.yaml](images/Italy_2022/Fiordo_di_Furore.yaml) files.
+
+The image can be viewed at [https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Italy_2022/Fiordo_di_Furore.jpg](https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Italy_2022/Fiordo_di_Furore.jpg)
 
 ### Examples
 
