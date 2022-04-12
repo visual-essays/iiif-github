@@ -18,6 +18,8 @@ IIIF manifests are automatically generated for Github files by the [iiif.visual-
 
 For example, the manifest URL for the image file [images/Italy_2022/Positano-CC0.jpg](images/Italy_2022/Positano-CC0.jpg) in this repository would be [https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Italy_2022/Positano-CC0.jpg/manifest.json](https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Italy_2022/Positano-CC0.jpg/manifest.json)
 
+A similar URL can be used to view the image in a simple IIIF viewer.  The viewer URL is the same as the manifest URL after the removal of the trailing `/manifest.json` path segment.  For instance, using the example from above the image can be viewed at the URL [https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Italy_2022/Positano-CC0.jpg](https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Italy_2022/Positano-CC0.jpg)
+
 # Options for image and/or metadata hosting
 
 ## Image only
@@ -30,15 +32,21 @@ In cases where multiple images in the same folder need to use the same label a d
 
 The reuse rights for an image is defined by appending a Creative Commons or Rights Statements code to the end of the file name (but before the file extension).  The reuse rights code must be one of the [Creative Commons](https://creativecommons.org/licenses/) or [RightsStatements.org](https://rightsstatements.org/page/1.0/) codes defined in [Reuse Rights](#reuse-rights) section below.  If a rights code is not provided in the file name a default value is used.  The default value is obtained from properties files found in the folder hierarchy in which the image file is located.  If rights metadata is available in multiple properties files the value in the file that is closest to the image takes precedence.  For instance, if a properties file at the root of the repository defined the reuse rights as `CC BY` and then another properties file in a parent/ancestor folder of the image defined the reuse rights as `CC BY-SA`, the `CC BY SA` value would take precedence and would be used in the generated IIIF manifest.  If not properties files are found in the image folder hierarchy a default value of `InC` is used.
 
-### Examples
-
-- The file name for the image [Fallstaff_Hotel_and_Westgate_Towers,_Canterbury-CC0.jpg](Fallstaff_Hotel_and_Westgate_Towers,_Canterbury-CC0.jpg) is formatted to enable a label and rights statement to be extracted without the need for a separate properties file.
-  - The IIIF manifest generated for this image can be seen at [https://iiif.visual-essays.net/gh:kent-map/images/Fallstaff_Hotel_and_Westgate_Towers,_Canterbury-CC0.jpg/manifest.json](https://iiif.visual-essays.net/gh:kent-map/images/Fallstaff_Hotel_and_Westgate_Towers,_Canterbury-CC0.jpg/manifest.json).
-  - This manifest can then be used in any IIIF viewer to view the image.  For instance, using the iiif.visual-essays.net viewer [https://iiif.visual-essays.net/gh:kent-map/images/Fallstaff_Hotel_and_Westgate_Towers,_Canterbury-CC0.jpg](https://iiif.visual-essays.net/gh:kent-map/images/Fallstaff_Hotel_and_Westgate_Towers,_Canterbury-CC0.jpg).
-
 ## Image and properties file
 
-In situations where it is desired to associate richer metadata with an image a supplemental properties file may be used.
+In situations where it is desired to associate richer metadata with an image a supplemental properties file may be used.  In this example the summary and depicts properties are defined. The `.yaml` properties files can be used to define standard IIIF properties like `label`, `summary`, `rights` and others.  Properties included in the `.yaml` file that are not associated with standard IIIF properties are added to the `metadata` manifest section which supports the definition of user-defined properties, like `depicts` in this example.  The `depicts` property in this example includes the [Wikidata](https://www.wikidata.org) QID for [Furore](https://www.wikidata.org/wiki/Q80948). 
+
+```yaml
+summary: The Fiordo di Furore, considered one of the most interesting geological features on the Amalfi Coast.
+rights: http://creativecommons.org/licenses/by/4.0/
+requiredStatement:
+  label: attribution
+  value: Image provided by Ron Snyder
+depicts: Q80948
+```
+
+In this example the [generated IIIF manifest](https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Italy_2022/Fiordo_di_Furore.jpg) includes a label extracted from the image file name and the properties defined in both the 
+[images/Italy_2022/iiif-props.yaml](images/Italy_2022/iiif-props.yaml) and [images/Italy_2022/iiif-props.yaml](images/Italy_2022/Fiordo_di_Furore.yaml) files.
 
 ### Examples
 
