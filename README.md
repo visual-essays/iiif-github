@@ -52,26 +52,14 @@ In this example the [generated IIIF manifest](https://iiif.visual-essays.net/gh:
 
 The image can be viewed at [https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Italy_2022/Fiordo_di_Furore.jpg](https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Italy_2022/Fiordo_di_Furore.jpg)
 
-### Examples
-
-- The image [Dane_John_Park.jpg](Dane_John_Park.jpg) is accompanied with the [Dane_John_Park.yaml](Dane_John_Park.yaml) properties file which includes a summary, date, and Wikidata QID (in the `depicts` metadata field).
-  - The IIIF manifest for this image can be seen at [https://iiif.visual-essays.net/gh:kent-map/images/Dane_John_Park.jpg/manifest.json](https://iiif.visual-essays.net/gh:kent-map/images/Dane_John_Park/manifest.json).
-  - The image can be viewed in the iiif.visual-essays.net image viewer at [https://iiif.visual-essays.net/gh:kent-map/images/Dane_John_Park.jpg](https://iiif.visual-essays.net/gh:kent-map/images/Dane_John_Park.jpg).
-
-> Where possible, it is recommended to include the `depicts` metadata property to identify entities depicted in the image.  In this example the included Wikidata QID ([Q16988443](https://www.wikidata.org/wiki/Q16988443)) indicates that the [Dane John Mound](https://en.wikipedia.org/wiki/Dane_John_Mound) is depicted in the image.
-
 ## Properties file only
 
 In situations where an image is hosted on another web site that does not provide a IIIF manifest a properties file is used to define the IIIF metadata in a generated IIIF manifest.  When using this method the URL to the externally hosted image is included in the properties file in addition to the usual IIIF metadata properties.
 
-### Examples
+An example of Github hosted IIIF properties file with an externally hosted image can be seen at [images/Positano.yaml](images/Positano.yaml).
 
-- [Canterbury_Cathedral_2021.yaml](Canterbury_Cathedral_2021.yaml)
-  - Generated manifest: [https://iiif.visual-essays.net/gh:kent-map/images/Canterbury_Cathedral_2021/manifest.json](https://iiif.visual-essays.net/gh:kent-map/images/Canterbury_Cathedral_2021/manifest.json)
-  - Image viewer URL: [https://iiif.visual-essays.net/gh:kent-map/images/Canterbury_Cathedral_2021](https://iiif.visual-essays.net/gh:kent-map/images/Canterbury_Cathedral_2021)
-- [Canterbury_Cathedral_circa_1905.yaml](Canterbury_Cathedral_circa_1905.yaml)
-  - Generated manifest: [https://iiif.visual-essays.net/gh:kent-map/images/Canterbury_Cathedral_circa_1905/manifest.json](https://iiif.visual-essays.net/gh:kent-map/images/Canterbury_Cathedral_circa_1905/manifest.json)
-  - Image viewer URL: [https://iiif.visual-essays.net/gh:kent-map/images/Canterbury_Cathedral_circa_1905](https://iiif.visual-essays.net/gh:kent-map/images/Canterbury_Cathedral_circa_1905)
+-  The generated manifest: [https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Positano.yaml/manifest.json](https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Positano.yaml/manifest.json)
+-  Viewed in a IIIF image viewer: [https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Positano.yaml](https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Positano.yaml)
 
 # Reuse Rights
 

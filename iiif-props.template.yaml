@@ -1,0 +1,21 @@
+language: 2-digit language code
+image_source: image url
+label: image label or caption 
+summary: image description
+navDate: date
+provider:
+- id: provider info url
+  label: image provider
+  homepage:
+  - id: provider homepage url
+    label: provider name
+  logo:
+  - id: provider logo url
+    format: image mime type (image/jpg, image/png, etc_)
+    height: 100
+    width: 120
+rights: http://creativecommons.org/licenses/by/4.0/
+requiredStatement:
+  label: 
+  value: 
+depicts: []
