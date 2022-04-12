@@ -16,7 +16,7 @@ In situations where more descriptive metadata is needed a simple key-value prope
 
 IIIF manifests are automatically generated for Github files by the [iiif.visual-essays.net](https://iiif.visual-essays.net) service.  Manifest URLs for Github hosted content take the form of `https://iiif.visual-essays.net/gh:<GITHUB_USERNAME>/<GITHUB_REPOSITORY>/<GITHUB_FILE_PATH>/manifest.json`
 
-For example, the manifest URL for the image file [images/Italy_2022/Positano-CC0.jpg](images/Italy_2022/Positano-CC0.jpg) in this repository would be [https://iiif.visual-essays.net/gh:images/Italy_2022/Positano-CC0.jpg/manifest.json](https://iiif.visual-essays.net/gh:images/Italy_2022/Positano-CC0.jpg/manifest.json)
+For example, the manifest URL for the image file [images/Italy_2022/Positano-CC0.jpg](images/Italy_2022/Positano-CC0.jpg) in this repository would be [https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Italy_2022/Positano-CC0.jpg/manifest.json](https://iiif.visual-essays.net/gh:visual-essays/iiif-github/images/Italy_2022/Positano-CC0.jpg/manifest.json)
 
 # Options for image and/or metadata hosting
 
