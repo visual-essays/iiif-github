@@ -12,15 +12,21 @@ In many cases a minimal set of IIIF required metadata for a single image can be 
 
 In situations where more descriptive metadata is needed a simple key-value properties file can be associated with a single image or a group of images located in a folder.
 
+# IIIF Manifest Generation
+
+IIIF manifests are automatically generated for Github files by the [iiif.visual-essays.net](https://iiif.visual-essays.net) service.  Manifest URLs for Github hosted content take the form of `https://iiif.visual-essays.net/gh:<GITHUB_USERNAME>/<GITHUB_REPOSITORY>/<GITHUB_FILE_PATH>/manifest.json`
+
+For example, the manifest URL for the image file [images/Italy_2022/Positano-CC0.jpg](images/Italy_2022/Positano-CC0.jpg) in this repository would be [https://iiif.visual-essays.net/gh:images/Italy_2022/Positano-CC0.jpg/manifest.json](https://iiif.visual-essays.net/gh:images/Italy_2022/Positano-CC0.jpg/manifest.json)
+
 # Options for image and/or metadata hosting
 
 ## Image only
 
-The easiest method for hosting a IIIF image file in a Github repository is to use a simple file naming convention that is used to define the image label and an optional reuse rights code.  This represents the minimal user-defined metadata to create a valid IIIF manifest.  When a rights code is ommitted from the file name the value `InC` (In copyright) is used as a default and the owner of the Github repository hosting the image is assumed to be the image owner.
+The easiest method for hosting a IIIF image file in a Github repository is to use a simple file naming convention that is used to define the image label and an optional reuse rights code.  This represents the minimal user-defined metadata to create a valid IIIF manifest.  When a rights code is omitted from the file name the value `InC` (In copyright) is used as a default and the owner of the Github repository hosting the image is assumed to be the image owner.
 
 The convention splits the file name into 2 segments that are separated by the first dash (`-`) character found in the name.  The characters in the first  segment are used for the image label in the generated IIIF manifest after replacing all underscore (`_`) characters with spaces.  The text in the second segment represent the reuse rights code to be associated with the image.  The reuse rights code will be transformed into a full URL as required by the IIIF manifest.
 
-In cases where multiple images in the same folder need to use the same label a double underscore (`__`) can be used to signify the end of a label and the start of some arbitray text that results in a unique file name.  The text after the double underscore but before the first dash is not included in the generated label.  For instance, file names like `Some_label__1-CC0.jpg` and `Some_label__2-CC0.jpg` could be used to create a unique file name for images that share a label and rights code.
+In cases where multiple images in the same folder need to use the same label a double underscore (`__`) can be used to signify the end of a label and the start of some arbitrary text that results in a unique file name.  The text after the double underscore but before the first dash is not included in the generated label.  For instance, file names like `Some_label__1-CC0.jpg` and `Some_label__2-CC0.jpg` could be used to create a unique file name for images that share a label and rights code.
 
 The reuse rights for an image is defined by appending a Creative Commons or Rights Statements code to the end of the file name (but before the file extension).  The reuse rights code must be one of the [Creative Commons](https://creativecommons.org/licenses/) or [RightsStatements.org](https://rightsstatements.org/page/1.0/) codes defined in [Reuse Rights](#reuse-rights) section below.  If a rights code is not provided in the file name a default value is used.  The default value is obtained from properties files found in the folder hierarchy in which the image file is located.  If rights metadata is available in multiple properties files the value in the file that is closest to the image takes precedence.  For instance, if a properties file at the root of the repository defined the reuse rights as `CC BY` and then another properties file in a parent/ancestor folder of the image defined the reuse rights as `CC BY-SA`, the `CC BY SA` value would take precedence and would be used in the generated IIIF manifest.  If not properties files are found in the image folder hierarchy a default value of `InC` is used.
 
