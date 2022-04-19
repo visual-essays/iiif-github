@@ -65,7 +65,7 @@ An example of Github hosted IIIF properties file with an externally hosted image
 
 The IIIF Presentation Manifests provide a flexible approach for explicitly defining the reuse rights for an image and any attribution (or other) statements that must be displayed when the image is used.
 
-`Rights` refers string that identifies a license or rights statement that applies to the content of the resource, such as the JSON of a Manifest or the pixels of an image. The value must be drawn from the set of [Creative Commons](https://creativecommons.org/licenses/) license URIs or [RightsStatements.org](https://rightsstatements.org/page/1.0/) rights statement URIs.  When defining the image rights in an IIIF properties file the full URL is included.  When the rights are defined as part of the image filename the rights code (e.g, `CC-BY` is used).
+`Rights` refers string that identifies a license or rights statement that applies to the content of the resource, such as the JSON of a Manifest or the pixels of an image. The value must be drawn from the set of [Creative Commons](https://creativecommons.org/licenses/) license URIs or [RightsStatements.org](https://rightsstatements.org/page/1.0/) rights statement URIs.  When defining the image rights in an IIIF properties file the full URL is included.  When the rights are defined as part of the image filename the rights code (e.g, `CC-BY`) is used.  When a rights code is not defined in the image file name and a value is not found in a properties file a CC-BY license is used with a attribution to the Github repository owner.
 
 ## Creative Commons Licenses
 
